@@ -1,0 +1,2 @@
+# Define backend, frontend, and persistent SQLite volume services here.
+# Keep the host telemetry exporter outside this Compose deployment.

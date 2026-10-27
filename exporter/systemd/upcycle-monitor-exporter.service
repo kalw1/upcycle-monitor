@@ -1,0 +1,12 @@
+# Install this unit on the physical host after defining the exporter command and environment.
+[Unit]
+Description=Upcycle Monitor host telemetry exporter
+After=network-online.target
+
+[Service]
+# Replace this placeholder with the least-privileged production command.
+ExecStart=/usr/bin/env python -m monitor_exporter
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
