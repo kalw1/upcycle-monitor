@@ -4,7 +4,6 @@ from dataclasses import dataclass
 import os
 from pathlib import Path
 
-BACKEND_URL = os.getenv("EXPORTER_BACKEND_URL", "http://localhost:8000")
 COLLECTION_INTERVAL_SECONDS = float(os.getenv("EXPORTER_COLLECTION_INTERVAL_SECONDS", "60"))
 
 POWER_SUPPLY_ROOT = Path(

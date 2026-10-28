@@ -35,7 +35,7 @@ def send_metrics_to_backend(
     """Send collected metrics and raise an error when delivery fails."""
     headers: dict[str, str] = {}
     if CONFIG.auth_token:
-        headers["Authorization"] = f"Bearer {CONFIG.auth_token}"
+        headers["Authorization"] = "Bearer " + CONFIG.auth_token
 
     endpoint = f"{CONFIG.backend_url.rstrip('/')}/metrics"
     LOGGER.debug("Submitting metrics to %s", endpoint)

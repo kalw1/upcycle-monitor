@@ -1,0 +1,8 @@
+"""Pytest configuration for the src-layout exporter package."""
+
+import sys
+from pathlib import Path
+
+
+SOURCE_ROOT = Path(__file__).parents[1] / "src"
+sys.path.insert(0, str(SOURCE_ROOT))
