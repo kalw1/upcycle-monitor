@@ -4,9 +4,10 @@ Description=Upcycle Monitor host telemetry exporter
 After=network-online.target
 
 [Service]
-# Store host-specific values in this file on the Proxmox host.
+# Install the exporter into this virtual environment before enabling the unit.
 EnvironmentFile=-/etc/upcycle-monitor/exporter.env
-ExecStart=/usr/bin/env python -m monitor_exporter
+WorkingDirectory=/opt/upcycle-monitor/exporter
+ExecStart=/opt/upcycle-monitor/exporter/.venv/bin/python -m monitor_exporter
 Restart=on-failure
 
 [Install]
