@@ -4,7 +4,8 @@ Description=Upcycle Monitor host telemetry exporter
 After=network-online.target
 
 [Service]
-# Replace this placeholder with the least-privileged production command.
+# Store host-specific values in this file on the Proxmox host.
+EnvironmentFile=-/etc/upcycle-monitor/exporter.env
 ExecStart=/usr/bin/env python -m monitor_exporter
 Restart=on-failure
 
