@@ -11,8 +11,6 @@ The repository is arranged around three independently deployable areas:
 - `deploy/` — future container deployment definitions.
 - `docs/` — architecture, development, and telemetry notes.
 
-The current tree is a skeleton only. Placeholder files describe where implementation belongs; dependencies and runtime commands will be added as development begins.
-
 ## Important constraints
 
 Battery and AC telemetry should be verified on the physical laptop because it may not be exposed inside a VM or LXC. A powered-off host cannot report its own outage, so future uptime detection will need an external observer or heartbeat consumer.

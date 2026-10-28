@@ -4,8 +4,6 @@ from dataclasses import dataclass
 import os
 from pathlib import Path
 
-COLLECTION_INTERVAL_SECONDS = float(os.getenv("EXPORTER_COLLECTION_INTERVAL_SECONDS", "60"))
-
 POWER_SUPPLY_ROOT = Path(
     os.getenv("POWER_SUPPLY_ROOT", "/sys/class/power_supply")
 )
@@ -87,9 +85,9 @@ class ExporterConfig:
 
     backend_url: str = os.getenv("EXPORTER_BACKEND_URL", "http://localhost:8000")
     auth_token: str | None = os.getenv("EXPORTER_AUTH_TOKEN")
-    collection_interval_seconds: float = float(
+    collection_interval_seconds: float = max(0.1, float(
         os.getenv("EXPORTER_COLLECTION_INTERVAL_SECONDS", "30")
-    )
+    ))
     battery: BatteryPaths = BatteryPaths()
     ac: AcPaths = AcPaths()
 
