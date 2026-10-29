@@ -1,3 +1,5 @@
-"""Persistence models."""
+"""Persistence model declarations."""
 
-# Define timestamped metrics, power events, last-seen status, and alert records here.
+from app.db import Base
+
+__all__ = ["Base"]

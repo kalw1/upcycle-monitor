@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "upcycle-monitor-backend"
+version = "0.1.0"
+description = "FastAPI backend for Upcycle Monitor"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "pydantic-settings",
+    "sqlalchemy>=2.0",
+    "uvicorn[standard]",
+]
+
+[project.optional-dependencies]
+test = [
+    "httpx",
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
